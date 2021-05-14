@@ -1,0 +1,80 @@
+.mine{
+ 	margin-left: 750px;
+}
+
+.carHover
+{
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.myButton
+{
+	background-color:#303030; /* Green */
+	border: 3px solid #303030;
+	color: white;
+	padding: 8px 20px;
+	text-align: center;
+	width: 130px;
+	display: inline-block;
+	font-size: 16px;
+	
+	margin-top: 4px;
+	margin-left: -20px;
+	margin-bottom: 5px;
+	transition-duration: all 0.10s;
+}
+
+.myButton:focus{
+	background-color: white; /* Green */
+	color: #303030;
+	border: 3px solid #303030 ;
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  }
+
+.myButton:hover{
+	background-color: white; /* Green */
+	color: #303030;
+	border: 3px solid #303030 ;
+	transition: transform .6s;
+  	transform: scale(1.07);
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  }
+
+  .btn:hover
+  {
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+	transition: transform .9s;
+  	transform: scale(1.06);
+  }
+
+  .myImg{
+	object-fit:cover;
+	margin-bottom: 20px;
+	box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+
+  .card
+  {
+	border-radius: 20px;
+  }
+
+  .card:hover
+  {
+	transition: transform .9s;
+	transform: scale(1.02);
+	border-color: black;
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  }
+
+  .cartItems
+  {
+		width: 1000px;
+		margin-left: 20px;
+  }
+
+  .cartSummary
+  {
+		margin-left: 0px;
+		
+  }
+
