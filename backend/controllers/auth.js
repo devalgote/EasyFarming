@@ -4,6 +4,7 @@ const jwt = require("jsonwebtoken"); // to generate signed token
 const expressJwt = require("express-jwt"); // for authorization check
 const { errorHandler } = require("../helpers/dbErrorHandler");
 const farmer = require("../models/farmer");
+const logger = require("../logger/index");
 
 exports.signup = (req, res) => {
     const user = new User(req.body);
@@ -13,11 +14,12 @@ exports.signup = (req, res) => {
                 error: errorHandler(err)
             });
         }
+        logger.info("successfully signed up");
         user.salt = undefined;
         user.hashed_password = undefined;
         res.json({
             user
-        });
+        }); 
     });
     if(req.body.role == 1)
     {
@@ -36,6 +38,7 @@ exports.signup = (req, res) => {
         });
         console.log(farmer);
     }
+    
 };
 
 exports.signin = (req, res) => {
@@ -60,12 +63,14 @@ exports.signin = (req, res) => {
         res.cookie("t", token, { expire: new Date() + 9999 });
         // return response with user and token to frontend client
         const { _id, name, email, role } = user;
+        logger.info("successfully login");
         return res.json({ token, user: { _id, email, name, role } });
     });
 };
 
 exports.signout = (req, res) => {
     res.clearCookie("t");
+    logger.info("Signout successfully");
     res.json({ message: "Signout successfuly" });
 };
 

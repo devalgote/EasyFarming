@@ -59,7 +59,7 @@ const Dashboard = () => {
         >
 			
 			<div className="row">
-                <div className="col-md-2 offset-md-0">{userLinks()}</div>
+                <div className="col-md-3 offset-md-0">{userLinks()}</div>
                 <div className="col-md-6 offset-md-1">
                     {userInfo()}
                 </div>

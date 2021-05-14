@@ -1,6 +1,6 @@
 const Farmer = require("../models/farmer");
 const { errorHandler } = require("../helpers/dbErrorHandler");
-
+const logger = require("../logger/index");
 
 exports.farmerById = (req, res, next, id) => {
     Farmer.findById(id).exec((err, farmer) => {
@@ -26,6 +26,7 @@ exports.list = (req, res) => {
                 error: errorHandler(err)
             });
         }
+        logger.info("got Farmer list ");
         res.json(data);
     });
 };

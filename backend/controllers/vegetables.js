@@ -3,7 +3,7 @@ const _ = require("lodash");
 const fs = require("fs");
 const Vegetables = require("../models/vegetables");
 const { errorHandler } = require("../helpers/dbErrorHandler");
-
+const logger = require("../logger/index");
 
 exports.vegetableById = (req, res, next, id) => {
     Vegetables.findById(id).exec((err, vegetable) => {
@@ -65,6 +65,7 @@ exports.add = (req, res) => {
                     error: errorHandler(err)
                 });
             }
+            logger.info("Vegetables added");
             res.json(result);
         });
     });
@@ -80,6 +81,7 @@ exports.remove = (req, res) => {
                 error: errorHandler(err)
             });
         }
+        logger.info("Vegetables removed successfully");
         res.json({
             message: "Vegetable deleted successfully"
         });
@@ -158,6 +160,7 @@ exports.list = (req, res) => {
                     error: "Vegetables not found"
                 });
             }
+            logger.info("Vegetables found");
             res.json(vegetables);
         });
 };
@@ -216,6 +219,7 @@ exports.photo = (req, res, next) => {
                     error: "Vegetables not found"
                 });
             }
+            logger.info("Filters applied and vegetables found");
             res.json({
                 size: data.length,
                 data

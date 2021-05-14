@@ -1,4 +1,5 @@
 const User = require("../models/user");
+const logger = require("../logger/index");
 
 exports.userById = (req, res, next, id) => {
     User.findById(id).exec((err, user) => {
